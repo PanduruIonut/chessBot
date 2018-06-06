@@ -1,0 +1,17 @@
+{
+  "name": "chessBot",
+  "version": "0.0.1",
+  "description": "",
+  "main": "js/main1.js",
+  "scripts": {
+    "dev": "babel js/main1.js -d dest/ -s inline -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ionut Panduru <ionut.panduru@hotmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
