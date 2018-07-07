@@ -58,7 +58,7 @@ function readTextFile(file) {
   rawFile.send(null); 
 }
 
-readTextFile("file://" + dir + "/PGN/moves1.txt");
+readTextFile("PGN/moves1.txt");
 
 function findOpening(){
   var openingFound=undefined;
