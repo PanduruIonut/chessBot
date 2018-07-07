@@ -117,7 +117,7 @@ var calcBestMove = function(depth, game, playerColor,
 
   var bestMove = null;
   var possibleMoves = game.moves();
-  //  random order for possible moves
+  // random order for possible moves
   // possibleMoves.sort(function(a, b){return 0.5 - Math.random()});
   
   var bestMoveValue = isMaximizingPlayer ? Number.NEGATIVE_INFINITY
@@ -126,8 +126,8 @@ var calcBestMove = function(depth, game, playerColor,
     var move = possibleMoves[i];
     game.move(move);
     value = calcBestMove(depth-1, game, playerColor, alpha, beta, !isMaximizingPlayer)[0];
-    // console.log(isMaximizingPlayer ? 'Max: ' : 'Min: ', depth, move, value,
-                // bestMove, bestMoveValue);
+    console.log(isMaximizingPlayer ? 'Max: ' : 'Min: ', depth, move, value,
+                bestMove, bestMoveValue);
 
     if (isMaximizingPlayer) {
       if (value > bestMoveValue) {
@@ -144,10 +144,10 @@ var calcBestMove = function(depth, game, playerColor,
     }
     game.undo();
     if (beta <= alpha) {
-      // console.log('Prune', alpha, beta);
+      console.log('Prune', alpha, beta);
       break;
     }
   }
-  // console.log('Depth: ' + depth + ' | Best Move: ' + bestMove + ' | ' + bestMoveValue + ' | A: ' + alpha + ' | B: ' + beta);
+  console.log('Depth: ' + depth + ' | Best Move: ' + bestMove + ' | ' + bestMoveValue + ' | A: ' + alpha + ' | B: ' + beta);
   return [bestMoveValue, bestMove || possibleMoves[0]];
 }
